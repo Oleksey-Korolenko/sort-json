@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { errorResponse } from '../common/response';
+import QueryService from '../query/query.service';
 
 export const catchError = (
   err: Error,
@@ -8,7 +8,7 @@ export const catchError = (
   next: NextFunction
 ) => {
   if (err) {
-    errorResponse(err, res);
+    QueryService.errorResponse(err, res);
   } else {
     next();
   }

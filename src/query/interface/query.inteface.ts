@@ -6,6 +6,10 @@ export interface IQueryAttributes<T> {
   port?: number;
 }
 
+export interface IQueryHeaders {
+  'Content-Type': string;
+}
+
 export interface IQueryParams {
   [key: string]: string;
 }
